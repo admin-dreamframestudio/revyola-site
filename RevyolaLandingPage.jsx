@@ -105,11 +105,9 @@ function Brand() {
   return (
     <a href="#top" className="flex items-center gap-3">
       <img
-        src="/Revyola_Logo.png"
-        alt="Revyola"
-        width={40}
-        height={40}
-        className="h-10 w-10 object-contain drop-shadow-[0_8px_24px_rgba(6,182,212,0.25)]"
+  src="/Revyola_Logo.png"
+  alt="Revyola"
+  className="h-14 w-auto object-contain"
       />
       <span className="text-lg font-semibold tracking-[-0.03em] text-white">Revyola</span>
     </a>
