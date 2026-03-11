@@ -102,14 +102,16 @@ if (typeof window !== "undefined" && typeof console !== "undefined") {
 }
 
 function Brand() {
-  return (
-    <a href="#top" className="flex items-center gap-3">
+return (
+    <a href="#top" className="flex items-center gap-4">
       <img
-  src="/Revyola_Logo.png"
-  alt="Revyola"
-  className="h-14 w-auto object-contain"
+        src="/Revyola_Logo.png"
+        alt="Revyola"
+        className="h-14 w-auto object-contain"
       />
-      <span className="text-lg font-semibold tracking-[-0.03em] text-white">Revyola</span>
+      <span className="text-lg font-semibold text-slate-950">
+        Revyola
+      </span>
     </a>
   );
 }
