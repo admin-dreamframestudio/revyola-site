@@ -108,7 +108,7 @@ function Brand() {
         <img
           src="/Revyola_Logo.png"
           alt="Revyola"
-          className="h-12 w-auto object-contain"
+          className="h-10 w-auto object-contain"
         />
       </div>
     </a>
