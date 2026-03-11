@@ -102,14 +102,16 @@ if (typeof window !== "undefined" && typeof console !== "undefined") {
 }
 
 function Brand() {
-return (
+  return (
     <a href="#top" className="flex items-center gap-4">
-      <img
-        src="/Revyola_Logo.png"
-        alt="Revyola"
-        className="h-14 w-auto object-contain"
-      />
-      <span className="text-lg font-semibold text-slate-950">
+      <div className="flex items-center justify-center rounded-xl bg-transparent">
+        <img
+          src="/Revyola_Logo.png"
+          alt="Revyola"
+          className="h-20 w-auto object-contain"
+        />
+      </div>
+      <span className="text-2xl font-semibold tracking-[-0.03em] text-white">
         Revyola
       </span>
     </a>
