@@ -126,10 +126,16 @@ function Brand() {
 
 function MenuIcon({ open = false }) {
   return (
-    <div className="relative h-5 w-5">
-      <span className={`absolute left-0 top-0.5 h-0.5 w-5 rounded-full bg-white transition ${open ? "translate-y-2 rotate-45" : ""}`} />
-      <span className={`absolute left-0 top-2.5 h-0.5 w-5 rounded-full bg-white transition ${open ? "opacity-0" : "opacity-100"}`} />
-      <span className={`absolute left-0 top-4.5 h-0.5 w-5 rounded-full bg-white transition ${open ? "-translate-y-2 -rotate-45" : ""}`} />
+    <div className="relative h-5 w-5 overflow-hidden">
+      <span
+        className={`absolute left-1/2 top-[4px] block h-[2px] w-[18px] -translate-x-1/2 rounded-full bg-white transition-transform duration-200 ease-out ${open ? "translate-y-[6px] rotate-45" : ""}`}
+      />
+      <span
+        className={`absolute left-1/2 top-1/2 block h-[2px] w-[18px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white transition-opacity duration-150 ease-out ${open ? "opacity-0" : "opacity-100"}`}
+      />
+      <span
+        className={`absolute left-1/2 bottom-[4px] block h-[2px] w-[18px] -translate-x-1/2 rounded-full bg-white transition-transform duration-200 ease-out ${open ? "-translate-y-[6px] -rotate-45" : ""}`}
+      />
     </div>
   );
 }
