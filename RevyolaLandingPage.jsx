@@ -67,6 +67,39 @@ const valueItems = [
   "Create leadership visibility without operational disruption",
 ];
 
+const principles = [
+  {
+    title: "Transparency over opacity",
+    icon: "transparency",
+    text: "Providers deserve to understand how reimbursement behaves across time, workflows, and payers. Revyola exists to make those patterns visible.",
+  },
+  {
+    title: "Signal over noise",
+    icon: "signal",
+    text: "The economics of care are rarely visible claim by claim. The real story emerges across patterns, not isolated events.",
+  },
+  {
+    title: "Empower providers",
+    icon: "providers",
+    text: "Clinical organizations should spend more time advancing care and less time deciphering hidden reimbursement behavior.",
+  },
+  {
+    title: "Work with existing systems",
+    icon: "systems",
+    text: "Revyola adds intelligence to the workflows specialty groups already rely on. It does not ask them to replace what is already working.",
+  },
+  {
+    title: "Raise the standard",
+    icon: "standard",
+    text: "A healthier payment system creates better conditions for high-value care, stronger specialty groups, and better patient outcomes.",
+  },
+  {
+    title: "Long-term impact",
+    icon: "impact",
+    text: "We believe payment intelligence will become a foundational layer of modern healthcare operations, not a temporary workaround.",
+  },
+];
+
 const partnerReasons = [
   {
     title: "For providers",
@@ -153,6 +186,8 @@ function NavLinks({ mobile = false, onNavigate = undefined }) {
     <>
       <a href="#signal" className={base} onClick={handleClick}>Signal</a>
       <a href="#specialties" className={base} onClick={handleClick}>Specialties</a>
+      <a href="#about" className={base} onClick={handleClick}>About</a>
+      <a href="#principles" className={base} onClick={handleClick}>Principles</a>
       <a href="#partners" className={base} onClick={handleClick}>Partners</a>
       <a href="#contact" className={base} onClick={handleClick}>Contact</a>
     </>
@@ -203,6 +238,77 @@ function SpecialtyIcon({ type }) {
     );
   }
 
+  if (type === "network") {
+    return (
+      <svg viewBox="0 0 24 24" className={common} fill="none" aria-hidden="true">
+        <circle cx="6" cy="7" r="2" fill="#67E8F9" />
+        <circle cx="18" cy="7" r="2" fill="#67E8F9" />
+        <circle cx="12" cy="17" r="2" fill="#67E8F9" />
+        <path d="M7.5 8.5L10.5 15" stroke="#67E8F9" strokeWidth="2" strokeLinecap="round" />
+        <path d="M16.5 8.5L13.5 15" stroke="#67E8F9" strokeWidth="2" strokeLinecap="round" />
+        <path d="M8.5 7H15.5" stroke="#67E8F9" strokeWidth="2" strokeLinecap="round" />
+      </svg>
+    );
+  }
+
+  if (type === "transparency") {
+    return (
+      <svg viewBox="0 0 24 24" className={common} fill="none" aria-hidden="true">
+        <path d="M3 12s3.5-5 9-5 9 5 9 5-3.5 5-9 5-9-5-9-5Z" stroke="#67E8F9" strokeWidth="2" />
+        <circle cx="12" cy="12" r="2.5" stroke="#67E8F9" strokeWidth="2" />
+      </svg>
+    );
+  }
+
+  if (type === "signal") {
+    return (
+      <svg viewBox="0 0 24 24" className={common} fill="none" aria-hidden="true">
+        <path d="M4 16c2-2 4-3 8-3s6 1 8 3" stroke="#67E8F9" strokeWidth="2" strokeLinecap="round" />
+        <path d="M4 11c2.5-2.5 4.5-4 8-4s5.5 1.5 8 4" stroke="#67E8F9" strokeWidth="2" strokeLinecap="round" />
+        <circle cx="12" cy="17" r="2" fill="#67E8F9" />
+      </svg>
+    );
+  }
+
+  if (type === "providers") {
+    return (
+      <svg viewBox="0 0 24 24" className={common} fill="none" aria-hidden="true">
+        <path d="M12 5v14" stroke="#67E8F9" strokeWidth="2" strokeLinecap="round" />
+        <path d="M5 12h14" stroke="#67E8F9" strokeWidth="2" strokeLinecap="round" />
+        <circle cx="12" cy="12" r="7" stroke="#67E8F9" strokeWidth="2" />
+      </svg>
+    );
+  }
+
+  if (type === "systems") {
+    return (
+      <svg viewBox="0 0 24 24" className={common} fill="none" aria-hidden="true">
+        <rect x="4" y="5" width="6" height="6" rx="1.5" stroke="#67E8F9" strokeWidth="2" />
+        <rect x="14" y="5" width="6" height="6" rx="1.5" stroke="#67E8F9" strokeWidth="2" />
+        <rect x="9" y="14" width="6" height="6" rx="1.5" stroke="#67E8F9" strokeWidth="2" />
+        <path d="M10 8h4" stroke="#67E8F9" strokeWidth="2" strokeLinecap="round" />
+        <path d="M12 11v3" stroke="#67E8F9" strokeWidth="2" strokeLinecap="round" />
+      </svg>
+    );
+  }
+
+  if (type === "standard") {
+    return (
+      <svg viewBox="0 0 24 24" className={common} fill="none" aria-hidden="true">
+        <path d="M12 4l2.2 4.5 5 .7-3.6 3.5.9 5-4.5-2.4-4.5 2.4.9-5L4.8 9.2l5-.7L12 4Z" stroke="#67E8F9" strokeWidth="2" strokeLinejoin="round" />
+      </svg>
+    );
+  }
+
+  if (type === "impact") {
+    return (
+      <svg viewBox="0 0 24 24" className={common} fill="none" aria-hidden="true">
+        <path d="M5 16l4-4 3 2 6-7" stroke="#67E8F9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M15 7h3v3" stroke="#67E8F9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    );
+  }
+
   return (
     <svg viewBox="0 0 24 24" className={common} fill="none" aria-hidden="true">
       <circle cx="6" cy="7" r="2" fill="#67E8F9" />
@@ -217,54 +323,20 @@ function SpecialtyIcon({ type }) {
 
 export default function RevyolaLandingPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  
-  const [formStatus, setFormStatus] = useState({
-    type: "",
-    message: "",
-  });
-  
-const handleSubmit = async (e) => {
-  e.preventDefault();
 
-  const form = e.currentTarget;
-  const formData = new FormData(form);
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-  const payload = {
-    name: String(formData.get("name") || ""),
-    email: String(formData.get("email") || ""),
-    company: String(formData.get("company") || ""),
-    message: String(formData.get("message") || ""),
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    const name = String(formData.get("name") || "");
+    const email = String(formData.get("email") || "");
+    const company = String(formData.get("company") || "");
+    const message = String(formData.get("message") || "");
+
+    window.location.href = buildMailtoLink({ name, email, company, message });
   };
-
-  try {
-    const response = await fetch("/api/send", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(payload),
-    });
-
-    const result = await response.json();
-
-    if (!response.ok) {
-      throw new Error(result.error || "Failed to send inquiry");
-    }
-
-    setFormStatus({
-      type: "success",
-      message: "Your message has been sent. We'll get back to you shortly.",
-    });
-
-    form.reset();
-
-  } catch (error) {
-    setFormStatus({
-      type: "error",
-      message: "Something went wrong. Please try again.",
-    });
-  }
-};
 
   return (
     <div id="top" className="min-h-screen overflow-x-hidden bg-[#050816] text-white">
@@ -323,9 +395,9 @@ const handleSubmit = async (e) => {
               <span className="truncate">Premium signal intelligence for specialty healthcare payments</span>
             </div>
 
-            <h1 className="max-w-5xl text-[2.85rem] font-semibold leading-[0.94] tracking-[-0.07em] text-white sm:text-6xl lg:text-7xl xl:text-[5.4rem]">
-              See what healthcare
-              <span className="block bg-gradient-to-r from-white via-cyan-200 to-indigo-300 bg-clip-text text-transparent">
+            <h1 className="max-w-[15ch] text-[2.85rem] font-semibold leading-none tracking-[-0.07em] text-white sm:max-w-5xl sm:text-6xl lg:text-7xl xl:text-[5.4rem]">
+              <span className="block">See what healthcare</span>
+              <span className="block pb-[0.18em] leading-[1.2] bg-gradient-to-r from-white via-cyan-200 to-indigo-300 bg-clip-text text-transparent">
                 payments are really doing.
               </span>
             </h1>
@@ -487,6 +559,67 @@ const handleSubmit = async (e) => {
           </div>
         </section>
 
+        <section id="about" className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 sm:pb-20 lg:px-10">
+          <div className="grid gap-4 sm:gap-6 lg:grid-cols-[1.05fr_0.95fr]">
+            <GlowCard className="p-6 sm:p-8 lg:p-10">
+              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-cyan-200">About Revyola</p>
+              <h2 className="mt-4 max-w-3xl text-4xl font-semibold tracking-[-0.05em] text-white sm:text-5xl">
+                Building a better signal for healthcare payments.
+              </h2>
+              <div className="mt-6 grid gap-5 text-base leading-8 text-slate-300 sm:text-lg">
+                <p>
+                  Healthcare providers did not enter medicine to study payer behavior. They entered to treat patients, advance care, and build organizations that serve their communities.
+                </p>
+                <p>
+                  Yet the reimbursement environment often forces specialty groups to absorb opaque payment patterns, inconsistent contract application, and silent revenue leakage that pulls attention away from care.
+                </p>
+                <p>
+                  Revyola exists to change that. We turn closed claims into signal so providers can better understand what the payment system is actually doing, strengthen the financial foundation of their practice, and focus more of their energy on delivering high-value care.
+                </p>
+              </div>
+            </GlowCard>
+
+            <GlowCard className="p-6 sm:p-8 lg:p-10">
+              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-cyan-200">Why it matters</p>
+              <div className="mt-6 grid gap-4">
+                {[
+                  "Quiet reimbursement variance compounds across thousands of encounters.",
+                  "Financial clarity gives providers more room to invest in patients, staff, and growth.",
+                  "Better payment transparency helps raise the standard of accountability across the healthcare ecosystem.",
+                ].map((item) => (
+                  <div key={item} className="rounded-3xl border border-white/10 bg-white/[0.04] p-5">
+                    <p className="text-sm leading-7 text-slate-200">{item}</p>
+                  </div>
+                ))}
+              </div>
+            </GlowCard>
+          </div>
+        </section>
+
+        <section id="principles" className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 sm:pb-20 lg:px-10">
+          <div className="max-w-3xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-cyan-200">Principles</p>
+            <h2 className="mt-4 text-4xl font-semibold tracking-[-0.05em] text-white sm:text-5xl">
+              The principles guiding Revyola.
+            </h2>
+            <p className="mt-6 text-lg leading-8 text-slate-300">
+              Revyola is being built as a long-term intelligence layer for healthcare payments. These principles shape how we think about transparency, providers, and the future economics of care.
+            </p>
+          </div>
+
+          <div className="mt-10 grid gap-4 sm:mt-12 sm:gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {principles.map((item) => (
+              <GlowCard key={item.title} className="p-6 sm:p-7">
+                <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-300/30 via-indigo-300/25 to-emerald-300/20 ring-1 ring-white/10">
+                  <SpecialtyIcon type={item.icon} />
+                </div>
+                <h3 className="text-xl font-semibold tracking-[-0.03em] text-white">{item.title}</h3>
+                <p className="mt-4 text-sm leading-7 text-slate-300">{item.text}</p>
+              </GlowCard>
+            ))}
+          </div>
+        </section>
+
         <section id="partners" className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 sm:pb-20 lg:px-10">
           <div className="grid gap-4 sm:gap-6 lg:grid-cols-[1.1fr_0.9fr]">
             <GlowCard className="p-6 sm:p-8 lg:p-10">
@@ -574,18 +707,6 @@ const handleSubmit = async (e) => {
                 >
                   Send inquiry
                 </button>
-
-                {formStatus.message && (
-                  <div
-                    className={`mt-4 rounded-xl border px-4 py-3 text-sm ${
-                      formStatus.type === "success"
-                        ? "border-cyan-400/40 bg-cyan-400/10 text-cyan-200"
-                        : "border-red-400/40 bg-red-400/10 text-red-200"
-                    }`}
-                  >
-                    {formStatus.message}
-                  </div>
-                )}
               </form>
             </div>
           </div>
