@@ -357,19 +357,51 @@ function SpecialtyIcon({ type }) {
 
 export default function RevyolaLandingPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [formStatus, setFormStatus] = useState({
+    type: "",
+    message: "",
+  });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const form = e.currentTarget;
     const formData = new FormData(form);
 
-    const name = String(formData.get("name") || "");
-    const email = String(formData.get("email") || "");
-    const company = String(formData.get("company") || "");
-    const message = String(formData.get("message") || "");
+    const payload = {
+      name: String(formData.get("name") || ""),
+      email: String(formData.get("email") || ""),
+      company: String(formData.get("company") || ""),
+      message: String(formData.get("message") || ""),
+    };
 
-    window.location.href = buildMailtoLink({ name, email, company, message });
+    try {
+      const response = await fetch("/api/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || "Failed to send inquiry");
+      }
+
+      setFormStatus({
+        type: "success",
+        message: "Your message has been sent. We'll get back to you shortly.",
+      });
+
+      form.reset();
+    } catch (error) {
+      setFormStatus({
+        type: "error",
+        message: "Something went wrong. Please try again.",
+      });
+    }
   };
 
   return (
@@ -877,6 +909,18 @@ export default function RevyolaLandingPage() {
                 >
                   Send inquiry
                 </button>
+
+                {formStatus.message && (
+                  <div
+                    className={`mt-4 rounded-xl border px-4 py-3 text-sm ${
+                      formStatus.type === "success"
+                        ? "border-cyan-400/40 bg-cyan-400/10 text-cyan-200"
+                        : "border-red-400/40 bg-red-400/10 text-red-200"
+                    }`}
+                  >
+                    {formStatus.message}
+                  </div>
+                )}
               </form>
             </div>
           </div>
