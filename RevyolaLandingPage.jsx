@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
 const heroStats = [
-  { value: "1–3%", label: "silent commercial revenue leakage can go unnoticed annually" },
-  { value: "Closed claims", label: "contain the clearest signal of payer behavior" },
-  { value: "No rip-and-replace", label: "works alongside existing billing and RCM teams" },
+  { value: "1–3%", label: "commercial revenue can quietly leak from already-paid claims each year" },
+  { value: "$200K–$500K", label: "potential annual recovery range for a 10-provider specialty practice" },
+  { value: "Success-based", label: "Revyola earns only when revenue is actually recovered" },
 ];
 
 const signalItems = [
@@ -115,6 +115,39 @@ const partnerReasons = [
   },
 ];
 
+const workflowSteps = [
+  {
+    step: "01",
+    title: "Connect claims data",
+    text: "Securely upload or connect closed claims, remittance files, and billing exports to establish a reimbursement baseline.",
+    tag: "Data ingestion",
+  },
+  {
+    step: "02",
+    title: "Analyze payer behavior",
+    text: "AI detects reimbursement anomalies, payer drift, modifier suppression, and contract variance patterns that standard workflows often miss.",
+    tag: "Variance intelligence",
+  },
+  {
+    step: "03",
+    title: "Surface recovery opportunities",
+    text: "Revyola prioritizes impacted claims, estimated dollars at risk, and the clearest recovery paths for your team.",
+    tag: "Actionable output",
+  },
+  {
+    step: "04",
+    title: "Recover through existing channels",
+    text: "Your billing or RCM team acts through standard payer processes using clear, targeted intelligence. No rip-and-replace required.",
+    tag: "Workflow alignment",
+  },
+  {
+    step: "05",
+    title: "Share in recovered revenue",
+    text: "Revyola earns a success-based fraction only when revenue is actually recovered by the practice.",
+    tag: "Aligned incentives",
+  },
+];
+
 export function buildMailtoLink({ name = "", email = "", company = "", message = "" }) {
   const subject = encodeURIComponent("Revyola inquiry");
   const body = encodeURIComponent(
@@ -185,10 +218,10 @@ function NavLinks({ mobile = false, onNavigate = undefined }) {
   return (
     <>
       <a href="#signal" className={base} onClick={handleClick}>Signal</a>
+      <a href="#how-it-works" className={base} onClick={handleClick}>How it works</a>
       <a href="#specialties" className={base} onClick={handleClick}>Specialties</a>
       <a href="#about" className={base} onClick={handleClick}>About</a>
       <a href="#principles" className={base} onClick={handleClick}>Principles</a>
-      <a href="#partners" className={base} onClick={handleClick}>Partners</a>
       <a href="#contact" className={base} onClick={handleClick}>Contact</a>
     </>
   );
@@ -391,20 +424,33 @@ export default function RevyolaLandingPage() {
       <main>
         <section className="relative mx-auto max-w-7xl px-4 pb-14 pt-10 sm:px-6 sm:pb-18 sm:pt-14 lg:grid lg:grid-cols-12 lg:gap-12 lg:px-10 lg:pb-28 lg:pt-24">
           <div className="lg:col-span-7">
-            <div className="mb-6 inline-flex max-w-full items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-sm text-cyan-100 backdrop-blur-xl sm:mb-8">
-              <span className="truncate">Premium signal intelligence for specialty healthcare payments</span>
+            <div className="mb-5 inline-flex max-w-full items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-sm text-cyan-100 backdrop-blur-xl sm:mb-6">
+              <span className="truncate">AI-native payment intelligence for specialty practices</span>
             </div>
 
             <h1 className="max-w-[15ch] text-[2.85rem] font-semibold leading-none tracking-[-0.07em] text-white sm:max-w-5xl sm:text-6xl lg:text-7xl xl:text-[5.4rem]">
-              <span className="block">See what healthcare</span>
+              <span className="block">Recover revenue</span>
               <span className="block pb-[0.18em] leading-[1.2] bg-gradient-to-r from-white via-cyan-200 to-indigo-300 bg-clip-text text-transparent">
-                payments are really doing.
+                your practice didn’t know it was losing.
               </span>
             </h1>
 
             <p className="mt-6 max-w-2xl text-base leading-7 text-slate-300 sm:mt-8 sm:text-xl sm:leading-8">
-              Revyola turns closed claims into signal. We surface hidden payer behaviors, underpayment patterns, and reimbursement variance across specialty workflows so providers, operators, and RCM teams can act with confidence.
+              Revyola analyzes already-paid claims to detect hidden payer underpayments, contract variance, and reimbursement drift across specialty workflows so your billing team can recover missed revenue with confidence.
             </p>
+
+            <div className="mt-6 max-w-3xl rounded-[24px] border border-white/10 bg-white/[0.05] p-4 backdrop-blur-xl sm:p-5">
+              <div className="flex flex-wrap items-center gap-3 text-sm text-slate-200">
+                <span className="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-3 py-1 text-cyan-100">
+                  Early specialty practice partnership in progress
+                </span>
+                <span className="text-slate-300">Dermatology</span>
+                <span className="h-1.5 w-1.5 rounded-full bg-slate-500" />
+                <span className="text-slate-300">Allergy</span>
+                <span className="h-1.5 w-1.5 rounded-full bg-slate-500" />
+                <span className="text-slate-300">No rip-and-replace workflow</span>
+              </div>
+            </div>
 
             <div className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:gap-4">
               <a
@@ -414,10 +460,10 @@ export default function RevyolaLandingPage() {
                 Start the conversation
               </a>
               <a
-                href="#specialties"
+                href="#how-it-works"
                 className="inline-flex min-h-[52px] items-center justify-center rounded-full border border-white/15 bg-white/5 px-6 py-3.5 text-sm font-medium text-white transition hover:border-cyan-300/40 hover:bg-white/10"
               >
-                Explore specialties
+                See how it works
               </a>
             </div>
 
@@ -438,66 +484,69 @@ export default function RevyolaLandingPage() {
                 <div className="rounded-[20px] border border-white/10 bg-[linear-gradient(180deg,rgba(6,11,30,0.98),rgba(3,8,24,0.95))] p-4 sm:rounded-[24px] sm:p-6">
                   <div className="flex items-start justify-between gap-3 border-b border-white/10 pb-4">
                     <div>
-                      <p className="text-sm text-cyan-200">Claims Signal Map</p>
-                      <p className="mt-1 text-lg font-semibold tracking-[-0.03em] text-white sm:text-xl">Pattern intelligence surface</p>
+                      <p className="text-sm text-cyan-200">Product snapshot</p>
+                      <p className="mt-1 text-lg font-semibold tracking-[-0.03em] text-white sm:text-xl">Recovery opportunity dashboard</p>
                     </div>
                     <div className="shrink-0 rounded-full border border-cyan-300/20 bg-cyan-300/10 px-3 py-1 text-xs text-cyan-100">
-                      Live model
+                      Sample view
                     </div>
                   </div>
 
-                  <div className="relative mt-5 h-[300px] overflow-hidden rounded-[20px] border border-white/8 bg-[linear-gradient(180deg,#081226,#050816)] sm:mt-6 sm:h-[380px] sm:rounded-[24px]">
-                    <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.045)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.045)_1px,transparent_1px)] bg-[size:44px_44px] opacity-35" />
-                    <div className="absolute left-3 top-3 rounded-2xl border border-cyan-300/15 bg-white/5 px-3 py-2 backdrop-blur-xl sm:left-5 sm:top-5 sm:px-4 sm:py-3">
-                      <p className="text-[10px] uppercase tracking-[0.24em] text-slate-400">Detected</p>
-                      <p className="mt-1 text-xs font-medium text-white sm:text-sm">Silent payer variance</p>
+                  <div className="mt-6 grid grid-cols-2 gap-3 sm:gap-4">
+                    {[
+                      ["Recovery opportunity", "$248,300"],
+                      ["Underpaid claims", "412"],
+                      ["Most frequent variance", "CPT 99214"],
+                      ["Top payer variance", "UnitedHealthcare"],
+                    ].map(([label, value]) => (
+                      <div key={label} className="rounded-3xl border border-white/10 bg-white/[0.05] p-4">
+                        <p className="text-[11px] uppercase tracking-[0.18em] text-slate-400">{label}</p>
+                        <p className="mt-2 text-lg font-semibold tracking-[-0.03em] text-white sm:text-xl">{value}</p>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="mt-5 rounded-[24px] border border-white/10 bg-[linear-gradient(180deg,#081226,#050816)] p-4">
+                    <div className="flex items-center justify-between text-xs text-slate-400">
+                      <span>Expected reimbursement</span>
+                      <span>Observed reimbursement</span>
                     </div>
-                    <div className="absolute right-3 top-3 rounded-2xl border border-indigo-300/15 bg-white/5 px-3 py-2 backdrop-blur-xl sm:right-5 sm:top-5 sm:px-4 sm:py-3">
-                      <p className="text-[10px] uppercase tracking-[0.24em] text-slate-400">Scope</p>
-                      <p className="mt-1 text-xs font-medium text-white sm:text-sm">Multi-specialty</p>
-                    </div>
 
-                    <svg viewBox="0 0 520 360" className="absolute inset-0 h-full w-full" aria-hidden="true">
-                      <defs>
-                        <linearGradient id="sigA" x1="0" y1="0" x2="1" y2="0">
-                          <stop offset="0%" stopColor="rgba(103,232,249,0.0)" />
-                          <stop offset="45%" stopColor="rgba(103,232,249,0.95)" />
-                          <stop offset="100%" stopColor="rgba(129,140,248,0.9)" />
-                        </linearGradient>
-                        <linearGradient id="sigB" x1="0" y1="0" x2="1" y2="0">
-                          <stop offset="0%" stopColor="rgba(52,211,153,0.0)" />
-                          <stop offset="55%" stopColor="rgba(52,211,153,0.85)" />
-                          <stop offset="100%" stopColor="rgba(103,232,249,0.85)" />
-                        </linearGradient>
-                      </defs>
-
-                      <path d="M20 235 C95 228,122 170,180 158 S280 214,350 180 438 96,500 126" stroke="url(#sigA)" strokeWidth="3.5" fill="none" />
-                      <path d="M24 280 C90 278,130 252,188 242 S282 184,356 198 438 278,500 238" stroke="url(#sigB)" strokeWidth="3" fill="none" />
-                      <path d="M34 118 C96 152,148 114,202 126 S282 158,338 140 424 64,490 88" stroke="rgba(129,140,248,0.55)" strokeWidth="2.4" fill="none" />
-
+                    <div className="mt-4 space-y-4">
                       {[
-                        [78, 229], [132, 178], [184, 158], [248, 188], [350, 180], [452, 114],
-                        [130, 256], [186, 242], [264, 206], [356, 198], [465, 252], [206, 126], [338, 140],
-                      ].map(([x, y], i) => (
-                        <g key={`${x}-${y}-${i}`}>
-                          <circle cx={x} cy={y} r="4.8" fill="rgba(255,255,255,0.95)" />
-                          <circle cx={x} cy={y} r="16" fill="rgba(56,189,248,0.12)" />
-                        </g>
-                      ))}
-                    </svg>
-
-                    <div className="absolute bottom-3 left-3 right-3 grid grid-cols-3 gap-2 sm:bottom-5 sm:left-5 sm:right-5 sm:gap-3">
-                      {[
-                        ["Patterns", "Bundling"],
-                        ["Behavior", "Downcoding"],
-                        ["Visibility", "Closed claims"],
-                      ].map(([label, value]) => (
-                        <div key={label} className="rounded-2xl border border-white/10 bg-white/5 px-3 py-2 backdrop-blur-xl sm:px-4 sm:py-3">
-                          <p className="text-[10px] uppercase tracking-[0.2em] text-slate-400">{label}</p>
-                          <p className="mt-1 text-xs font-medium text-white sm:text-sm">{value}</p>
+                        ["99214", 94, 81],
+                        ["11102", 78, 74],
+                        ["95004", 66, 55],
+                      ].map(([code, expected, observed]) => (
+                        <div key={code}>
+                          <div className="mb-2 flex items-center justify-between text-sm">
+                            <span className="font-medium text-white">CPT {code}</span>
+                            <span className="text-slate-300">Variance detected</span>
+                          </div>
+                          <div className="space-y-2">
+                            <div className="h-2.5 rounded-full bg-white/10">
+                              <div className="h-2.5 rounded-full bg-gradient-to-r from-cyan-300 to-indigo-300" style={{ width: `${expected}%` }} />
+                            </div>
+                            <div className="h-2.5 rounded-full bg-white/10">
+                              <div className="h-2.5 rounded-full bg-gradient-to-r from-emerald-300 to-cyan-300" style={{ width: `${observed}%` }} />
+                            </div>
+                          </div>
                         </div>
                       ))}
                     </div>
+                  </div>
+
+                  <div className="mt-5 grid grid-cols-3 gap-2 sm:gap-3">
+                    {[
+                      ["Input", "Closed claims"],
+                      ["Engine", "AI variance analysis"],
+                      ["Output", "Recovery-ready insights"],
+                    ].map(([label, value]) => (
+                      <div key={label} className="rounded-2xl border border-white/10 bg-white/[0.05] px-3 py-3 backdrop-blur-xl sm:px-4">
+                        <p className="text-[10px] uppercase tracking-[0.2em] text-slate-400">{label}</p>
+                        <p className="mt-1 text-xs font-medium text-white sm:text-sm">{value}</p>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </GlowCard>
@@ -524,6 +573,120 @@ export default function RevyolaLandingPage() {
                 </GlowCard>
               ))}
             </div>
+          </div>
+        </section>
+
+        <section id="how-it-works" className="relative overflow-hidden py-16 sm:py-20">
+          <div className="pointer-events-none absolute inset-0">
+            <div className="absolute left-1/2 top-0 h-[28rem] w-[28rem] -translate-x-1/2 rounded-full bg-cyan-500/10 blur-3xl" />
+            <div className="absolute bottom-0 right-[-8rem] h-[22rem] w-[22rem] rounded-full bg-indigo-500/10 blur-3xl" />
+            <div className="absolute left-[-6rem] top-1/3 h-[18rem] w-[18rem] rounded-full bg-sky-400/10 blur-3xl" />
+          </div>
+
+          <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
+            <div className="mx-auto max-w-3xl text-center">
+              <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-1 text-xs font-medium uppercase tracking-[0.24em] text-cyan-200/90 backdrop-blur">
+                How Revyola works
+              </div>
+
+              <h2 className="mt-6 text-4xl font-semibold tracking-[-0.05em] text-white sm:text-5xl">
+                From hidden payer variance
+                <span className="block bg-gradient-to-r from-white via-cyan-200 to-indigo-300 bg-clip-text text-transparent">
+                  to recovered revenue
+                </span>
+              </h2>
+
+              <p className="mt-5 text-base leading-7 text-slate-300 sm:text-lg">
+                Revyola analyzes already-paid claims, detects hidden underpayments, and helps your team recover revenue through existing payer channels.
+              </p>
+            </div>
+
+            <div className="relative mt-20">
+              <div className="absolute left-0 right-0 top-16 hidden h-px bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent lg:block" />
+
+              <div className="grid gap-6 lg:grid-cols-5">
+                {workflowSteps.map((item, index) => (
+                  <div key={item.step} className="group relative">
+                    <div className="absolute left-1/2 top-16 z-10 hidden h-3 w-3 -translate-x-1/2 rounded-full border border-cyan-300/40 bg-cyan-300/20 shadow-[0_0_20px_rgba(103,232,249,0.25)] lg:block" />
+
+                    <div className="relative rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl transition duration-300 hover:border-cyan-300/30 hover:bg-white/[0.07] hover:shadow-[0_0_40px_rgba(34,211,238,0.08)]">
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs font-medium tracking-[0.24em] text-cyan-200/80">
+                          STEP {item.step}
+                        </span>
+                        <div className="rounded-full border border-white/10 bg-black/20 px-3 py-1 text-[11px] font-medium text-slate-300">
+                          {index === 4 ? "Success fee" : "Workflow"}
+                        </div>
+                      </div>
+
+                      <h3 className="mt-5 text-lg font-semibold leading-6 text-white">{item.title}</h3>
+                      <p className="mt-3 text-sm leading-6 text-slate-300">{item.text}</p>
+                      <div className="mt-6 h-px w-full bg-gradient-to-r from-cyan-300/0 via-cyan-300/30 to-indigo-300/0" />
+                      <div className="mt-5 flex items-center gap-2 text-xs text-slate-400">
+                        <span className="inline-block h-2 w-2 rounded-full bg-cyan-300/70" />
+                        {item.tag}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-12 grid gap-4 rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl sm:grid-cols-3">
+              <div>
+                <p className="text-xs font-medium uppercase tracking-[0.22em] text-cyan-200/80">Input</p>
+                <p className="mt-2 text-sm text-slate-300">Closed claims, remittance data, billing exports</p>
+              </div>
+              <div>
+                <p className="text-xs font-medium uppercase tracking-[0.22em] text-cyan-200/80">Output</p>
+                <p className="mt-2 text-sm text-slate-300">Prioritized recovery opportunities and payer variance insights</p>
+              </div>
+              <div>
+                <p className="text-xs font-medium uppercase tracking-[0.22em] text-cyan-200/80">Commercial model</p>
+                <p className="mt-2 text-sm text-slate-300">Revyola shares in a fraction of successfully recovered revenue</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-10">
+          <div className="grid gap-4 sm:gap-6 lg:grid-cols-[1.05fr_0.95fr]">
+            <GlowCard className="p-6 sm:p-8 lg:p-10">
+              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-cyan-200">Illustrative ROI</p>
+              <h2 className="mt-4 text-4xl font-semibold tracking-[-0.05em] text-white sm:text-5xl">
+                Make the value concrete for the practice admin.
+              </h2>
+              <p className="mt-6 text-base leading-8 text-slate-300 sm:text-lg">
+                For a specialty practice with 10 providers generating about $8M annually, even a modest 1–3% payment variance can translate into significant revenue left unrecovered.
+              </p>
+              <div className="mt-8 grid gap-4 sm:grid-cols-3">
+                {[
+                  ["Practice profile", "10 providers"],
+                  ["Annual revenue", "$8M"],
+                  ["Potential recovery", "$200K–$500K"],
+                ].map(([label, value]) => (
+                  <div key={label} className="rounded-3xl border border-white/10 bg-white/[0.04] p-5">
+                    <p className="text-[11px] uppercase tracking-[0.18em] text-slate-400">{label}</p>
+                    <p className="mt-2 text-xl font-semibold tracking-[-0.03em] text-white">{value}</p>
+                  </div>
+                ))}
+              </div>
+            </GlowCard>
+
+            <GlowCard className="p-6 sm:p-8 lg:p-10">
+              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-cyan-200">Why buyers lean in</p>
+              <div className="mt-6 grid gap-4">
+                {[
+                  "No rip-and-replace billing workflow required.",
+                  "Already-paid claims contain the clearest signal of payer behavior.",
+                  "Success-based economics align incentives with the practice.",
+                ].map((item) => (
+                  <div key={item} className="rounded-3xl border border-white/10 bg-white/[0.04] p-5">
+                    <p className="text-sm leading-7 text-slate-200">{item}</p>
+                  </div>
+                ))}
+              </div>
+            </GlowCard>
           </div>
         </section>
 
@@ -580,12 +743,18 @@ export default function RevyolaLandingPage() {
             </GlowCard>
 
             <GlowCard className="p-6 sm:p-8 lg:p-10">
-              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-cyan-200">Why it matters</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-cyan-200">Founder</p>
+              <h3 className="mt-4 text-3xl font-semibold tracking-[-0.04em] text-white sm:text-4xl">
+                Shailesh Kumar
+              </h3>
+              <p className="mt-4 text-base leading-8 text-slate-300 sm:text-lg">
+                Founder of Revyola and healthcare technology leader focused on using AI and payment intelligence to uncover underpayments hiding inside already-paid claims.
+              </p>
               <div className="mt-6 grid gap-4">
                 {[
-                  "Quiet reimbursement variance compounds across thousands of encounters.",
-                  "Financial clarity gives providers more room to invest in patients, staff, and growth.",
-                  "Better payment transparency helps raise the standard of accountability across the healthcare ecosystem.",
+                  "Experienced in enterprise healthcare technology and complex payer-facing workflows.",
+                  "Building Revyola to help specialty practices strengthen financial visibility without operational disruption.",
+                  "Focused on practical revenue recovery, not dashboard theater.",
                 ].map((item) => (
                   <div key={item} className="rounded-3xl border border-white/10 bg-white/[0.04] p-5">
                     <p className="text-sm leading-7 text-slate-200">{item}</p>
@@ -620,7 +789,7 @@ export default function RevyolaLandingPage() {
           </div>
         </section>
 
-        <section id="partners" className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 sm:pb-20 lg:px-10">
+        <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 sm:pb-20 lg:px-10">
           <div className="grid gap-4 sm:gap-6 lg:grid-cols-[1.1fr_0.9fr]">
             <GlowCard className="p-6 sm:p-8 lg:p-10">
               <p className="text-sm font-semibold uppercase tracking-[0.22em] text-cyan-200">Why groups partner with Revyola</p>
@@ -695,7 +864,7 @@ export default function RevyolaLandingPage() {
 
                 <textarea
                   name="message"
-                  placeholder="Tell us about your specialty, your payer mix, or what you want visibility into"
+                  placeholder="Tell us about your specialty, payer mix, or what you want visibility into"
                   rows={6}
                   className="rounded-3xl border border-white/10 bg-white/[0.05] px-4 py-4 text-white outline-none transition placeholder:text-slate-400 focus:border-cyan-300/50"
                   required
@@ -715,7 +884,7 @@ export default function RevyolaLandingPage() {
 
       <footer className="border-t border-white/10 bg-[#050816]">
         <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-8 text-sm text-slate-400 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-10">
-          <p>© 2026 Revyola. Signal intelligence for specialty healthcare payments.</p>
+          <p>© 2026 Revyola. AI-native payment intelligence for specialty healthcare practices.</p>
           <a href="mailto:info@revyola.com" className="transition hover:text-white">
             info@revyola.com
           </a>
