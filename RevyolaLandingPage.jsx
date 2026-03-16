@@ -532,9 +532,13 @@ export default function RevyolaLandingPage() {
                       ["Most frequent variance", "CPT 99214"],
                       ["Top payer variance", "UnitedHealthcare"],
                     ].map(([label, value]) => (
-                      <div key={label} className="rounded-3xl border border-white/10 bg-white/[0.05] p-4">
-                        <p className="text-[11px] uppercase tracking-[0.18em] text-slate-400">{label}</p>
-                        <p className="mt-2 text-lg font-semibold tracking-[-0.03em] text-white sm:text-xl">{value}</p>
+                      <div key={label} className="min-w-0 rounded-3xl border border-white/10 bg-white/[0.05] p-4">
+                          <p className="text-[10px] uppercase tracking-[0.16em] text-slate-400 sm:text-[11px] sm:tracking-[0.18em]">
+                            {label}
+                          </p>
+                          <p className="mt-2 break-words text-[clamp(1.35rem,4.6vw,1.9rem)] font-semibold leading-tight tracking-[-0.04em] text-white sm:text-xl">
+                            {value}
+                          </p>
                       </div>
                     ))}
                   </div>
