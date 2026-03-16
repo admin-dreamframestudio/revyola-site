@@ -789,6 +789,7 @@ export default function RevyolaLandingPage() {
               </p>
               <div className="mt-6 grid gap-4">
                 {[
+                  "MBA from UCLA Anderson School of Management with specialization in Technology Management, Finance, and Entrepreneurship, and a Bachelor of Engineering in Information Technology.",
                   "Experienced in enterprise healthcare technology and complex payer-facing workflows.",
                   "Building Revyola to help specialty practices strengthen financial visibility without operational disruption.",
                   "Focused on practical revenue recovery, not dashboard theater.",
