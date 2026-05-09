@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
 const heroStats = [
-  { value: "1–3%", label: "commercial revenue can quietly leak from already-paid claims each year" },
-  { value: "$200K–$500K", label: "potential annual recovery range for a 10-provider specialty practice" },
+  { value: "5–10%", label: "commercial revenue can quietly leak from already-paid claims each year" },
+  { value: "$400K–$800K", label: "potential annual recovery range for a 10-provider specialty practice" },
   { value: "Success-based", label: "Revyola earns only when revenue is actually recovered" },
 ];
 
@@ -490,7 +490,7 @@ export default function RevyolaLandingPage() {
                 href="#contact"
                 className="inline-flex min-h-[52px] items-center justify-center rounded-full bg-gradient-to-r from-cyan-400 to-indigo-500 px-6 py-3.5 text-sm font-semibold text-slate-950 shadow-[0_18px_50px_rgba(56,189,248,0.28)] transition hover:-translate-y-0.5"
               >
-                Start the conversation
+                Run a Free Recovery Audit
               </a>
               <a
                 href="#how-it-works"
@@ -694,13 +694,13 @@ export default function RevyolaLandingPage() {
                 Make the value concrete for the practice admin.
               </h2>
               <p className="mt-6 text-base leading-8 text-slate-300 sm:text-lg">
-                For a specialty practice with 10 providers generating about $8M annually, even a modest 1–3% payment variance can translate into significant revenue left unrecovered.
+                For a specialty practice with 10 providers generating about $8M annually, even a modest 5–10% payment variance can translate into significant revenue left unrecovered.
               </p>
               <div className="mt-8 grid gap-4 sm:grid-cols-3">
                 {[
                   ["Practice profile", "10 providers"],
                   ["Annual revenue", "$8M"],
-                  ["Potential recovery", "$200K–$500K"],
+                  ["Potential recovery", "$400K–$800K"],
                 ].map(([label, value]) => (
                   <div key={label} className="rounded-3xl border border-white/10 bg-white/[0.04] p-5">
                     <p className="text-[11px] uppercase tracking-[0.18em] text-slate-400">{label}</p>
