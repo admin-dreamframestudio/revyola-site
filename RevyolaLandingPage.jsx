@@ -91,7 +91,7 @@ const principles = [
   {
     title: "Live with pilot practices",
     icon: "providers",
-    text: "Currently onboarding dermatology and cardiology practices in Southern California. First recovery analyses delivered within 1 business day of file upload.",
+    text: "Currently onboarding specialty practices across the United States. First recovery analyses delivered within 1 business day of file upload.",
   },
   {
     title: "Built on Claude for Healthcare",
@@ -854,7 +854,7 @@ export default function RevyolaLandingPage() {
               What we have built.
             </h2>
             <p className="mt-6 text-lg leading-8 text-slate-300">
-              A production-grade agentic RCM platform — live, tested, and onboarding pilot practices in Southern California right now.
+              A production-grade agentic RCM platform — live, tested, and built for any specialty practice across the United States.
             </p>
           </div>
 
