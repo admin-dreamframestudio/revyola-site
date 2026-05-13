@@ -475,7 +475,7 @@ export default function RevyolaLandingPage() {
             <div className="mt-6 max-w-3xl rounded-[24px] border border-white/10 bg-white/[0.05] p-4 backdrop-blur-xl sm:p-5">
               <div className="flex flex-wrap items-center gap-3 text-sm text-slate-200">
                 <span className="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-3 py-1 text-cyan-100">
-                  Partnering with specialty practices
+                  Accepting practices
                 </span>
                 <span className="text-slate-300">Dermatology</span>
                 <span className="h-1.5 w-1.5 rounded-full bg-slate-500" />
