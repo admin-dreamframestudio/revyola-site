@@ -833,7 +833,7 @@ export default function RevyolaLandingPage() {
               </p>
               <div className="mt-6 grid gap-4">
                 {[
-                  "Serial entrepreneur with multiple successful exits. MBA, UCLA Anderson — Technology Management, Finance & Entrepreneurship. B.Tech, Information Technology.",
+                  "Entrepreneur and healthcare technology leader with 20+ years of experience in enterprise systems and complex payer-facing workflows. MBA, UCLA Anderson — Technology Management, Finance & Entrepreneurship. B.Tech, Information Technology.",
                   "After watching specialty practices absorb millions in silent underpayments with no tool to fight back, I built Revyola to give doctors the weapon insurance companies never wanted them to have.",
                   "Built the full 9-agent agentic RCM platform from zero to production in weeks. Deep relationships with specialty practices across Southern California.",
                   "Powered by Claude for Healthcare — Anthropic's HIPAA-ready AI platform used by Banner Health, Sanofi, and leading health systems.",
