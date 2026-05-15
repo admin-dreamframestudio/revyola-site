@@ -5,7 +5,7 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Revyola — Payment Intelligence</title>
+        <title>Revyola — Revenue Recovery Intelligence</title>
         <meta name="description" content="Premium signal intelligence for healthcare payments" />
       </Head>
 
