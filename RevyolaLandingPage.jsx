@@ -985,7 +985,7 @@ export default function RevyolaLandingPage() {
 
       <footer className="border-t border-white/10 bg-[#050816]">
         <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-8 text-sm text-slate-400 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-10">
-          <p>© 2026 Revyola. Agentic Revenue Cycle Intelligence. HIPAA compliant · 9 AI agents · 1 business day delivery.</p>
+          <p>© 2026 Revyola. Revenue Recovery Intelligence. HIPAA compliant · 9 AI agents · 2 business day delivery.</p>
           <a href="mailto:info@revyola.com" className="transition hover:text-white">
             info@revyola.com
           </a>
